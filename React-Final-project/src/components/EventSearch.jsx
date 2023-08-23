@@ -7,7 +7,9 @@ import { UsersAndCatContext } from "../ContextProvider";
 import { InputA } from "./ui/Input";
 
 export const loader = async () => {
-    const events = await fetch("http://localhost:3000/events");
+    const events = await fetch(
+        "https://my-json-server.typicode.com/Martijns3/demo/events"
+    );
 
     return { events: await events.json() };
 };

@@ -25,7 +25,9 @@ import { eventIO } from "../eventActions";
 import { UsersAndCatContext } from "../../ContextProvider";
 
 export const loader = async ({ params }) => {
-    const event = await fetch(`http://localhost:3000/events/${params.eventId}`);
+    const event = await fetch(
+        `https://my-json-server.typicode.com/Martijns3/demo/events/${params.eventId}`
+    );
     return {
         event: await event.json(),
     };
