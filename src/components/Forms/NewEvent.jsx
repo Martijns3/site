@@ -76,7 +76,7 @@ export const NewEvent = () => {
         <Flex className="new-event" justify="center">
             <Flex direction="column" w="500px" mt="-1">
                 <Text fontSize={["30px", "34px", "40px"]} mb="1em">
-                    Create a new event
+                    Create a new eventas
                 </Text>
                 <Form method="post" id="new-event-form">
                     <Flex direction="column" gap="0.5em" mt="-5">
