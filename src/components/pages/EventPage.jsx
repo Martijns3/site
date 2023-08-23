@@ -26,7 +26,7 @@ import { UsersAndCatContext } from "../../ContextProvider";
 
 export const loader = async ({ params }) => {
     const event = await fetch(
-        `https://my-json-server.typicode.com/Martijns3/demo/events/${params.eventId}`
+        `https://marty-app-65ac5731f411.herokuapp.com/events/${params.eventId}`
     );
     return {
         event: await event.json(),

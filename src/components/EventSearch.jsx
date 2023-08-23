@@ -8,7 +8,7 @@ import { InputA } from "./ui/Input";
 
 export const loader = async () => {
     const events = await fetch(
-        "https://my-json-server.typicode.com/Martijns3/demo/events"
+        "https://marty-app-65ac5731f411.herokuapp.com/events"
     );
 
     return { events: await events.json() };

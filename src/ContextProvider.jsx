@@ -7,13 +7,11 @@ export const UsersAndCatContextProvider = ({ children }) => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         const fetchUser = () => {
-            fetch("https://my-json-server.typicode.com/Martijns3/demo/users")
+            fetch("https://marty-app-65ac5731f411.herokuapp.com/users")
                 .then((response) => response.json())
                 .then((result) => setUsers(result))
                 .catch((error) => console.log("An error occured"));
-            fetch(
-                "https://my-json-server.typicode.com/Martijns3/demo/categories"
-            )
+            fetch("https://marty-app-65ac5731f411.herokuapp.com/categories")
                 .then((response) => response.json())
                 .then((result) => setCategories(result))
                 .catch((error) => console.log("An error occured"));

@@ -12,7 +12,7 @@ export const eventIO = async (formData = {}, method, id = 0) => {
         let toastMessage = successMessage[2];
         try {
             const newId = await fetch(
-                "https://my-json-server.typicode.com/Martijns3/demo/events",
+                "https://marty-app-65ac5731f411.herokuapp.com/events",
                 {
                     method: method,
                     body: JSON.stringify(formData),
@@ -55,7 +55,7 @@ export const eventIO = async (formData = {}, method, id = 0) => {
         };
         try {
             await fetch(
-                `https://my-json-server.typicode.com/Martijns3/demo/events/${id}`,
+                `https://marty-app-65ac5731f411.herokuapp.com/events/${id}`,
                 body
             ).then((response) => {
                 if (response.ok) {
