@@ -25,9 +25,8 @@ import { eventIO } from "../eventActions";
 import { UsersAndCatContext } from "../../ContextProvider";
 
 export const loader = async ({ params }) => {
-    const event = await fetch(
-        `https://marty-app-65ac5731f411.herokuapp.com/events/${params.eventId}`
-    );
+    const API = "https://marty-app-65ac5731f411.herokuapp.com";
+    const event = await fetch(`${API}/events/${params.eventId}`);
     return {
         event: await event.json(),
     };

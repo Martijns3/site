@@ -3,6 +3,7 @@ import { createStandaloneToast } from "@chakra-ui/react";
 const { toast } = createStandaloneToast();
 
 export const eventIO = async (formData = {}, method, id = 0) => {
+    const API = "https://marty-app-65ac5731f411.herokuapp.com";
     const successMessage = [
         "Success: Event Deleted",
         "Success: Event edits were saved",
@@ -11,14 +12,11 @@ export const eventIO = async (formData = {}, method, id = 0) => {
     if (method == "POST") {
         let toastMessage = successMessage[2];
         try {
-            const newId = await fetch(
-                "https://marty-app-65ac5731f411.herokuapp.com/events",
-                {
-                    method: method,
-                    body: JSON.stringify(formData),
-                    headers: { "Content-Type": "application/json" },
-                }
-            )
+            const newId = await fetch(`${API}/events`, {
+                method: method,
+                body: JSON.stringify(formData),
+                headers: { "Content-Type": "application/json" },
+            })
                 .then((response) => {
                     if (response.ok) {
                         toast({
@@ -61,10 +59,7 @@ export const eventIO = async (formData = {}, method, id = 0) => {
             headers: { "Content-Type": "application/json" },
         };
         try {
-            await fetch(
-                `https://marty-app-65ac5731f411.herokuapp.com/events/${id}`,
-                body
-            ).then((response) => {
+            await fetch(`${API}/events/${id}`, body).then((response) => {
                 if (response.ok) {
                     toast({
                         title: toastMessage,
