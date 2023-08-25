@@ -63,7 +63,7 @@ export const NewEvent = () => {
     categories.map((category) =>
         optionList.push({ value: category.id, label: category.name })
     );
-    const [value, setValue] = useState("/src/utils/field-of-sunflower.jpg");
+    const [value, setValue] = useState("/img/field-of-sunflower.jpg");
 
     let imgLinkHeight;
     if (value.length > 0) {
