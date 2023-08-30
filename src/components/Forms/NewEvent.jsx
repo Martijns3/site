@@ -74,7 +74,13 @@ export const NewEvent = () => {
     console.log(value.length, imgLinkHeight);
     return (
         <Flex className="new-event" justify="center">
-            <Flex direction="column" w="500px" mt="-1">
+            <Flex
+                direction="column"
+                w="500px"
+                mt="-1"
+                px={[3, 3, 3, 6]}
+                py={[2, 2, 2, 4]}
+            >
                 <Text fontSize={["30px", "34px", "40px"]} mb="1em">
                     Create a new event
                 </Text>
