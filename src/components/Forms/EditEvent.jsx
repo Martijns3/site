@@ -112,14 +112,17 @@ export const EditEvent = () => {
     }
 
     return (
-        <Flex className="new-event" justify="center">
+        <Flex
+            className="new-event"
+            justify={["flex-start", "flex-start", "flex-start", "center"]}
+        >
             <Flex
                 direction="column"
                 w={["95%", "95%", "500px", "500px"]}
                 mt="-1"
                 mb={[2, 2, 2, 0]}
             >
-                <Text align="left" fontSize={["30px", "34px", "40px"]} mb="1em">
+                <Text fontSize={["30px", "34px", "40px"]} mb="1em">
                     Edit event
                 </Text>
                 <Form
