@@ -73,10 +73,14 @@ export const NewEvent = () => {
     }
     console.log(value.length, imgLinkHeight);
     return (
-        <Flex className="new-event" justify="center">
+        <Flex
+            className="new-event"
+            justify={["flex-start", "flex-start", "flex-start", "center"]}
+            px={[3, 3, 3, 6]}
+        >
             <Flex
                 direction="column"
-                w={["95%", "95%", "500x", "500px"]}
+                w={["100%", "100%", "500px", "500px"]}
                 mt="-1"
                 mb={[2, 2, 2, 0]}
             >
