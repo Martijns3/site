@@ -76,7 +76,7 @@ export const NewEvent = () => {
         <Flex className="new-event" justify="center">
             <Flex
                 direction="column"
-                w={["95%", "95%", "95%", "500px"]}
+                w={["95%", "95%", "500x", "500px"]}
                 mt="-1"
                 mb={[2, 2, 2, 0]}
             >
