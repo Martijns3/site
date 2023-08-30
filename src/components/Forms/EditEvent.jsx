@@ -115,10 +115,12 @@ export const EditEvent = () => {
         <Flex
             className="new-event"
             justify={["flex-start", "flex-start", "flex-start", "center"]}
+            px={[3, 3, 3, 6]}
         >
             <Flex
                 direction="column"
-                w={["95%", "95%", "500px", "500px"]}
+                // w={["95%", "95%", "500px", "500px"]}
+                w="500px"
                 mt="-1"
                 mb={[2, 2, 2, 0]}
             >
