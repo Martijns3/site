@@ -121,7 +121,7 @@ export const EditEvent = () => {
                 direction="column"
                 w={["100%", "100%", "500px", "500px"]}
                 mt="-1"
-                mb={[2, 2, 2, 2]}
+                mb="2"
             >
                 <Text fontSize={["30px", "34px", "40px"]} mb="1em">
                     Edit event
