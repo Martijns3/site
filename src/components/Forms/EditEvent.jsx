@@ -119,7 +119,7 @@ export const EditEvent = () => {
                 mt="-1"
                 mb={[2, 2, 2, 0]}
             >
-                <Text fontSize={["30px", "34px", "40px"]} mb="1em">
+                <Text align="left" fontSize={["30px", "34px", "40px"]} mb="1em">
                     Edit event
                 </Text>
                 <Form
