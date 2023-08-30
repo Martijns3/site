@@ -78,8 +78,8 @@ export const NewEvent = () => {
                 direction="column"
                 w="500px"
                 mt="-1"
-                mx={[3, 3, 3, 6]}
-                my={[2, 2, 2, 4]}
+                // mx={[3, 3, 3, 6]}
+                // my={[2, 2, 2, 4]}
             >
                 <Text fontSize={["30px", "34px", "40px"]} mb="1em">
                     Create a new event
