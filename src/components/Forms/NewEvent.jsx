@@ -76,10 +76,10 @@ export const NewEvent = () => {
         <Flex className="new-event" justify="center">
             <Flex
                 direction="column"
-                w="500px"
+                w={["420px", "420px", "420px", "500px"]}
                 mt="-1"
-                // mx={[3, 3, 3, 6]}
-                // my={[2, 2, 2, 4]}
+                mx={[3, 3, 3, 6]}
+                my={[2, 2, 2, 4]}
             >
                 <Text fontSize={["30px", "34px", "40px"]} mb="1em">
                     Create a new event
