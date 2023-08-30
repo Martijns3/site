@@ -113,7 +113,7 @@ export const EditEvent = () => {
 
     return (
         <Flex
-            className="new-event"
+            className="edit-event"
             justify={["flex-start", "flex-start", "flex-start", "center"]}
             px={[3, 3, 3, 6]}
         >
