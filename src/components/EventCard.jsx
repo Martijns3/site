@@ -12,39 +12,20 @@ import { CheckCircleIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { UsersAndCatContext } from "../ContextProvider";
 import { useContext } from "react";
+import { dateCheck, formatDate } from "./eventActions";
 
 export const EventCard = ({ event }) => {
     const { categories } = useContext(UsersAndCatContext);
     const cat = categories.filter((category) =>
         event.categoryIds.includes(category.id)
     );
-    const sortedDate =
-        event.startTime.split("T")[0].split("-")[2] +
-        "-" +
-        event.startTime.split("T")[0].split("-")[1] +
-        "-" +
-        event.startTime.split("T")[0].split("-")[0];
 
-    const sortedDate2 =
-        event.endTime.split("T")[0].split("-")[2] +
-        "-" +
-        event.endTime.split("T")[0].split("-")[1] +
-        "-" +
-        event.endTime.split("T")[0].split("-")[0];
+    const [sortedDate, sortedDate2] = formatDate(
+        event.startTime,
+        event.endTime
+    );
 
-    let startTime;
-    let endTime;
-    if (
-        event.startTime.split("T")[1].slice(0, 5) >
-            event.endTime.split("T")[1].slice(0, 5) &&
-        event.startTime.split("T")[0] == event.endTime.split("T")[0]
-    ) {
-        endTime = event.startTime.split("T")[1].slice(0, 5);
-        startTime = event.endTime.split("T")[1].slice(0, 5);
-    } else {
-        startTime = event.startTime.split("T")[1].slice(0, 5);
-        endTime = event.endTime.split("T")[1].slice(0, 5);
-    }
+    const [startTime, endTime] = dateCheck(event.startTime, event.endTime);
 
     return (
         <Link to={`event/${event.id}`}>

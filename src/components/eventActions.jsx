@@ -95,3 +95,35 @@ const reRoute = (method, newId = 0) => {
     }, 1500);
     return () => clearTimeout(timeout);
 };
+
+export const dateCheck = (eventStart, eventEnd) => {
+    let startTime;
+    let endTime;
+    if (eventStart > eventEnd) {
+        startTime = eventEnd.split("T")[1].slice(0, 5);
+        endTime = eventStart.split("T")[1].slice(0, 5);
+    } else {
+        startTime = eventStart.split("T")[1].slice(0, 5);
+        endTime = eventEnd.split("T")[1].slice(0, 5);
+    }
+
+    return [startTime, endTime];
+};
+
+export const formatDate = (startDate, endDate) => {
+    const sortedDate =
+        startDate.split("T")[0].split("-")[2] +
+        "-" +
+        startDate.split("T")[0].split("-")[1] +
+        "-" +
+        startDate.split("T")[0].split("-")[0];
+
+    const sortedDate2 =
+        endDate.split("T")[0].split("-")[2] +
+        "-" +
+        endDate.split("T")[0].split("-")[1] +
+        "-" +
+        endDate.split("T")[0].split("-")[0];
+
+    return [sortedDate, sortedDate2];
+};

@@ -21,7 +21,7 @@ import { CheckCircleIcon } from "@chakra-ui/icons";
 import { useContext } from "react";
 
 import { ButtonA } from "../ui/Button1";
-import { eventIO } from "../eventActions";
+import { eventIO, dateCheck, formatDate } from "../eventActions";
 import { UsersAndCatContext } from "../../ContextProvider";
 
 export const loader = async ({ params }) => {
@@ -67,33 +67,12 @@ export const EventPage = () => {
         });
     };
 
-    const sortedDate =
-        event.startTime.split("T")[0].split("-")[2] +
-        "-" +
-        event.startTime.split("T")[0].split("-")[1] +
-        "-" +
-        event.startTime.split("T")[0].split("-")[0];
+    const [startTime, endTime] = dateCheck(event.startTime, event.endTime);
 
-    const sortedDate2 =
-        event.endTime.split("T")[0].split("-")[2] +
-        "-" +
-        event.endTime.split("T")[0].split("-")[1] +
-        "-" +
-        event.endTime.split("T")[0].split("-")[0];
-
-    let startTime;
-    let endTime;
-    if (
-        event.startTime.split("T")[1].slice(0, 5) >
-            event.endTime.split("T")[1].slice(0, 5) &&
-        event.startTime.split("T")[0] == event.endTime.split("T")[0]
-    ) {
-        startTime = event.endTime.split("T")[1].slice(0, 5);
-        endTime = event.startTime.split("T")[1].slice(0, 5);
-    } else {
-        startTime = event.startTime.split("T")[1].slice(0, 5);
-        endTime = event.endTime.split("T")[1].slice(0, 5);
-    }
+    const [sortedDate, sortedDate2] = formatDate(
+        event.startTime,
+        event.endTime
+    );
 
     return (
         <Flex justify="center" align="center">
