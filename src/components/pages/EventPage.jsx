@@ -69,10 +69,8 @@ export const EventPage = () => {
 
     const [startTime, endTime] = dateCheck(event.startTime, event.endTime);
 
-    const [sortedDate, sortedDate2] = formatDate(
-        event.startTime,
-        event.endTime
-    );
+    const sortedDate = formatDate(event.startTime);
+    const sortedDate2 = formatDate(event.endTime);
 
     return (
         <Flex justify="center" align="center">

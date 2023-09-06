@@ -110,20 +110,9 @@ export const dateCheck = (eventStart, eventEnd) => {
     return [startTime, endTime];
 };
 
-export const formatDate = (startDate, endDate) => {
-    const sortedDate =
-        startDate.split("T")[0].split("-")[2] +
-        "-" +
-        startDate.split("T")[0].split("-")[1] +
-        "-" +
-        startDate.split("T")[0].split("-")[0];
+export const formatDate = (s) => {
+    const reversed = s.split("T")[0].split("-").reverse();
+    const sortedDate = `${reversed[0]}-${reversed[1]}-${reversed[2]}`;
 
-    const sortedDate2 =
-        endDate.split("T")[0].split("-")[2] +
-        "-" +
-        endDate.split("T")[0].split("-")[1] +
-        "-" +
-        endDate.split("T")[0].split("-")[0];
-
-    return [sortedDate, sortedDate2];
+    return [sortedDate];
 };

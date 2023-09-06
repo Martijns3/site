@@ -20,10 +20,8 @@ export const EventCard = ({ event }) => {
         event.categoryIds.includes(category.id)
     );
 
-    const [sortedDate, sortedDate2] = formatDate(
-        event.startTime,
-        event.endTime
-    );
+    const sortedDate = formatDate(event.startTime);
+    const sortedDate2 = formatDate(event.endTime);
 
     const [startTime, endTime] = dateCheck(event.startTime, event.endTime);
 
