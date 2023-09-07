@@ -93,7 +93,7 @@ export const EventCard = ({ event }) => {
                         </Flex>
                         <Flex
                             direction={["column", "column", "column", "row"]}
-                            h={["80px", "80px", "80px", "40%"]}
+                            h={["80px", "80px", "80px", "80px", "40%"]}
                             w="70%"
                             p={["1em"]}
                             align={[
