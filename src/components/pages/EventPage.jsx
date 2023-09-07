@@ -24,7 +24,7 @@ import { dateCheck, formatDate, eventIO } from "../eventActions";
 import { UsersAndCatContext } from "../../ContextProvider";
 
 export const loader = async ({ params }) => {
-    const API = "http://localhost:3000";
+    const API = "https://marty-app-65ac5731f411.herokuapp.com";
     const event = await fetch(`${API}/events/${params.eventId}`);
     return {
         event: await event.json(),
