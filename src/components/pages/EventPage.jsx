@@ -125,7 +125,7 @@ export const EventPage = () => {
                             <Flex
                                 direction="column"
                                 h="50px"
-                                minHeight={["59px", "59px", "68px", "68px"]}
+                                minHeight={["69px", "69px", "68px", "68px"]}
                                 wrap="wrap"
                                 fontSize={[13, 13, 15, 15]}
                             >
