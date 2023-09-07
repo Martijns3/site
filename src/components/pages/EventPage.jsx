@@ -125,7 +125,7 @@ export const EventPage = () => {
                             <Flex
                                 direction="column"
                                 h="50px"
-                                minHeight={["79px", "69px", "68px", "68px"]}
+                                minHeight={["69px", "69px", "168px", "68px"]}
                                 wrap="wrap"
                                 fontSize={[13, 13, 15, 15]}
                             >
@@ -145,7 +145,7 @@ export const EventPage = () => {
                             <br></br>
 
                             <Flex direction="column">
-                                <Text as="b"> Created by:</Text>
+                                <Text as="b"> Created bys:</Text>
                                 <Box mb="10">
                                     {user.map((u) => (
                                         <p key={u.id}>
