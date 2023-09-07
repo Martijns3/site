@@ -15,17 +15,16 @@ import {
     List,
     ListItem,
     ListIcon,
-    Spacer,
 } from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { useContext } from "react";
 
 import { ButtonA } from "../ui/Button1";
-import { eventIO, dateCheck, formatDate } from "../eventActions";
+import { dateCheck, formatDate, eventIO } from "../eventActions";
 import { UsersAndCatContext } from "../../ContextProvider";
 
 export const loader = async ({ params }) => {
-    const API = "https://marty-app-65ac5731f411.herokuapp.com";
+    const API = "http://localhost:3000";
     const event = await fetch(`${API}/events/${params.eventId}`);
     return {
         event: await event.json(),
@@ -66,11 +65,10 @@ export const EventPage = () => {
             },
         });
     };
-
-    const [startTime, endTime] = dateCheck(event.startTime, event.endTime);
-
     const sortedDate = formatDate(event.startTime);
     const sortedDate2 = formatDate(event.endTime);
+
+    const [startTime, endTime] = dateCheck(event.startTime, event.endTime);
 
     return (
         <Flex justify="center" align="center">
@@ -117,8 +115,8 @@ export const EventPage = () => {
                     </Flex>
                     <Flex direction={"row"} width="100%" pb="3">
                         <Flex
-                            w={["100", "100%", "100%", "50%"]}
-                            display="border-box"
+                            direction="column"
+                            w={["100%", "100%", "100%", "50%"]}
                             px={8}
                         >
                             <Text as="b" className="categories">
@@ -127,9 +125,9 @@ export const EventPage = () => {
                             <Flex
                                 direction="column"
                                 h="50px"
-                                minHeight={["59px", "59px", "67px", "67px"]}
+                                minHeight={["59px", "59px", "68px", "68px"]}
                                 wrap="wrap"
-                                fontSize={[10, 13, 15, 15]}
+                                fontSize={[13, 13, 15, 15]}
                             >
                                 {cat.map((f) => (
                                     <List key={f.id}>
@@ -145,10 +143,10 @@ export const EventPage = () => {
                                 ))}
                             </Flex>
                             <br></br>
-                            <Spacer />
+
                             <Flex direction="column">
                                 <Text as="b"> Created by:</Text>
-                                <Box>
+                                <Box mb="10">
                                     {user.map((u) => (
                                         <p key={u.id}>
                                             {u.name}
