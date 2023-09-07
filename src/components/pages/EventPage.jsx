@@ -127,9 +127,9 @@ export const EventPage = () => {
                             <Flex
                                 direction="column"
                                 h="50px"
-                                minHeight={["78px", "78px", "90px", "90px"]}
+                                minHeight={["59px", "59px", "67px", "67px"]}
                                 wrap="wrap"
-                                fontSize={[13, 13, 15, 15]}
+                                fontSize={[10, 13, 15, 15]}
                             >
                                 {cat.map((f) => (
                                     <List key={f.id}>
